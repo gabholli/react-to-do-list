@@ -1,10 +1,11 @@
 import { useState } from "react"
+import { CustomFormProps } from "../types/types"
 
-const CustomForm = ({ onAddItem }) => {
+const CustomForm: React.FC<CustomFormProps> = ({ onAddItem }) => {
 
     const [input, setInput] = useState('')
 
-    const handleSubmit = (event: { preventDefault: () => void }) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement) => {
         event.preventDefault()
         if (input.trim()) {
             onAddItem(input)
