@@ -21,7 +21,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ onAddItem }) => {
         >
             <input
                 type="text"
-                className="rounded-xl indent-4"
+                className="rounded-xl indent-4 text-black"
                 required
                 placeholder="Enter item here..."
                 value={input}
@@ -29,7 +29,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ onAddItem }) => {
             >
             </input>
             <button type="submit"
-                className="bg-blue-300 px-4 py-2 rounded-xl"
+                className="px-4 py-2 rounded-xl border-white border-2"
             >
                 Add item to list
             </button>

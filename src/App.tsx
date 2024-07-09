@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <div className='bg-blue-100 min-h-svh flex flex-col items-center gap-y-8'>
+      <div className='bg-black min-h-svh flex flex-col items-center gap-y-8 text-white'>
         <h1 className='mt-12 text-4xl'>To Do List</h1>
         <CustomForm onAddItem={addItem} />
         <ItemList items={items} onDelete={deleteItem} onEdit={editItem} />
