@@ -30,7 +30,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
                         onChange={(e) => setEditText(e.target.value)}
                         className="border rounded p-1"
                     />
-                    <button onClick={() => handleSave(item.id)} className=" px-2 py-1 rounded-xl border-white border-2">
+                    <button onClick={() => handleSave(item.id)} className="px-2 py-1 rounded-xl border-white border-2">
                         Save
                     </button>
                     <button onClick={handleCancel} className="px-2 py-1 rounded-xl border-white border-2">
@@ -39,7 +39,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
                 </div>
             ) : (
                 <div className="flex gap-x-4 justify-center items-center">
-                    <span className="w-40 text-wrap">{item.text}</span>
+                    <span className="w-24 md:w-40 text-wrap">{item.text}</span>
                     <button onClick={() => handleEdit(item)} className="px-2 py-1 rounded-xl border-white border-2">
                         Edit
                     </button>
