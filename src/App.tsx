@@ -21,7 +21,7 @@ function App() {
   }
 
   const deleteItem = (id: number) => {
-    setItems(items.filter(item => item.id !== id))
+    setItems(items.filter((item: { id: number }) => item.id !== id))
   }
 
   return (
