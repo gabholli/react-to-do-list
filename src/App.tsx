@@ -1,18 +1,17 @@
 import './App.css'
 import CustomForm from './components/CustomForm'
-import { useState } from 'react'
-import { TodoItem } from './types/types'
 import ItemList from './components/ItemList'
+import useLocalStorage from './hooks/UseLocalStorage'
 
 function App() {
-  const [items, setItems] = useState<TodoItem[]>([])
+  const [items, setItems] = useLocalStorage("items", [])
 
   const addItem = (item: string) => {
     setItems([...items, { id: Date.now(), text: item }])
   }
 
   const editItem = (id: number, newText: string) => {
-    const updatedItems = items.map(item => {
+    const updatedItems = items.map((item: { id: number }) => {
       if (item.id === id) {
         return { ...item, text: newText }
       }

@@ -1,21 +1,26 @@
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react";
 
-const useLocalStorage = (key: string, initialValue: any) => {
-    const [value, setValue] = useState(() => {
+// Define the hook with a generic type parameter T
+const useLocalStorage = <T>(key: string, initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>] => {
+    const [value, setValue] = useState<T>(() => {
         try {
-            const localValue = window.localStorage.getItem(key)
-            return localValue ? JSON.parse(localValue) : initialValue
+            const item = window.localStorage.getItem(key);
+        return item ? JSON.parse(item) : initialValue;
         } catch (err) {
-            console.log(err)
-            return initialValue
+            console.log("Error reading from localStorage", err);
+        return initialValue;
         }
-    })
+    });
 
     useEffect(() => {
-        window.localStorage.setItem(key, JSON.stringify(value))
-    }, [key, value])
+        try {
+            window.localStorage.setItem(key, JSON.stringify(value));
+        } catch (err) {
+            console.log("Error writing to localStorage", err);
+        }
+    }, [key, value]);
 
-    return [value, setValue]
-}
+        return [value, setValue];
+};
 
-export default useLocalStorage
+        export default useLocalStorage;
