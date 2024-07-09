@@ -5,7 +5,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ onAddItem }) => {
 
     const [input, setInput] = useState('')
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         if (input.trim()) {
             onAddItem(input)
