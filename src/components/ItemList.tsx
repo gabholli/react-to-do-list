@@ -21,23 +21,31 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
     }
 
     const itemsMap = items.map(item => (
-        <div key={item.id} className="flex justify-between items-center">
+        <div key={item.id} className="flex justify-between items-center border-black border-2 mb-2 p-4">
             {editId === item.id ? (
-                <div>
+                <div className="flex gap-x-4">
                     <input
                         type="text"
                         value={editText}
                         onChange={(e) => setEditText(e.target.value)}
                         className="border rounded p-1"
                     />
-                    <button onClick={() => handleSave(item.id)} className="mx-2">Save</button>
-                    <button onClick={handleCancel} className="mx-2">Cancel</button>
+                    <button onClick={() => handleSave(item.id)} className="bg-blue-200 px-2 py-1 rounded-xl">
+                        Save
+                    </button>
+                    <button onClick={handleCancel} className="bg-blue-200 px-2 py-1 rounded-xl">
+                        Cancel
+                    </button>
                 </div>
             ) : (
-                <div>
-                    <span>{item.text}</span>
-                    <button onClick={() => handleEdit(item)} className="mx-2">Edit</button>
-                    <button onClick={() => onDelete(item.id)} className="mx-2">Delete</button>
+                <div className="flex gap-x-4 justify-center items-center">
+                    <span className="w-40 text-wrap">{item.text}</span>
+                    <button onClick={() => handleEdit(item)} className="bg-blue-200 px-2 py-1 rounded-xl">
+                        Edit
+                    </button>
+                    <button onClick={() => onDelete(item.id)} className="bg-blue-200 px-2 py-1 rounded-xl">
+                        Delete
+                    </button>
                 </div>
             )}
         </div>
