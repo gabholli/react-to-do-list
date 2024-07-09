@@ -28,7 +28,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
                         type="text"
                         value={editText}
                         onChange={(e) => setEditText(e.target.value)}
-                        className="border rounded p-1"
+                        className="border rounded p-1 text-black"
                     />
                     <button onClick={() => handleSave(item.id)} className="px-2 py-1 rounded-xl border-white border-2">
                         Save
