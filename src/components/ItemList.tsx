@@ -23,7 +23,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
     const itemsMap = items.map(item => (
         <div key={item.id} className="flex justify-between items-center border-white border-2 mb-2 p-4 rounded-xl">
             {editId === item.id ? (
-                <div className="flex gap-x-4">
+                <div className="flex flex-col md:flex-row gap-x-4 gap-y-4 md-gap-y-0">
                     <input
                         type="text"
                         value={editText}
