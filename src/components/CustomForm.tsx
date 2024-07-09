@@ -15,7 +15,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ onAddItem }) => {
 
     return (
         <form
-            className="flex m-2 gap-x-6"
+            className="flex m-2 gap-x-4"
             onSubmit={handleSubmit}
 
         >
