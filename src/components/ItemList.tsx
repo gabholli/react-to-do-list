@@ -21,7 +21,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
     }
 
     const itemsMap = items.map(item => (
-        <div key={item.id} className="flex justify-between items-center border-white border-2 mb-2 p-4 rounded-xl">
+        <div key={item.id} className="flex justify-center items-center border-white border-2 mb-2 p-4 rounded-xl">
             {editId === item.id ? (
                 <div className="flex flex-col md:flex-row gap-x-4 gap-y-4 md-gap-y-0">
                     <input
@@ -39,7 +39,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDelete, onEdit }) => {
                 </div>
             ) : (
                 <div className="flex gap-x-4 justify-center items-center">
-                    <span className="w-24 md:w-40 text-wrap">{item.text}</span>
+                    <span className="w-24 md:w-52 text-wrap">{item.text}</span>
                     <button onClick={() => handleEdit(item)} className="px-2 py-1 rounded-xl border-white border-2">
                         Edit
                     </button>
