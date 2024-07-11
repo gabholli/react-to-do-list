@@ -8,7 +8,7 @@ This is a simple CRUD app using local storage to store items, created using Reac
 ### Dependencies
 - Requires a web browser
 ### Executing program
-- To run this website, go to [URL here]
+- To run this website, go to https://gabholli-to-do.netlify.app
 ## Authors
 Gabe Hollifield
 ## License
