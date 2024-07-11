@@ -2,7 +2,7 @@
 Simple To Do List
 
 ## Description
-This is a simple CRUD app using local storage to store items, created using React.
+This is a simple CRUD app using local storage to store items, created using React and TypeScript.
 
 ## Getting Started
 ### Dependencies
